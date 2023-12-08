@@ -12,7 +12,7 @@ pipeline {
                     sh 'mkdir extracted-code'
 
                     // Run a container to extract the code from the Docker image
-                    sh 'sudo docker create --name temp-container viconee/vicoport:latest'
+                    sh 'sudo docker create --name temp-container viconee/training:latest'
                     sh 'sudo docker cp temp-container:/usr/src/app extracted-code'
                     sh 'sudo docker rm temp-container'
 
