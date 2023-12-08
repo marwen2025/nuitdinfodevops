@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     docker.build("viconee/vicoport:latest")
-                    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-credentials') {
+                    docker.withRegistry('https://registry.hub.docker.com', 'dockercred') {
                         docker.image("viconee/vicoport:latest").push()
                     }
                 }
