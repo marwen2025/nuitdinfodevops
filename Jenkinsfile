@@ -12,9 +12,9 @@ pipeline {
                     sh 'mkdir extracted-code'
 
                     // Run a container to extract the code from the Docker image
-                    sh 'docker create --name temp-container viconee/vicoport:latest'
-                    sh 'docker cp temp-container:/usr/src/app extracted-code'
-                    sh 'docker rm temp-container'
+                    sh 'sudo docker create --name temp-container viconee/vicoport:latest'
+                    sh 'sudo docker cp temp-container:/usr/src/app extracted-code'
+                    sh 'sudo docker rm temp-container'
 
                     // Clone the GitHub repository
                     git clone 'git@github.com:marwen2025/nuitdinfodevops.git'
