@@ -2,16 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Build and Push Docker Image') {
-            steps {
-                script {
-                    docker.build("viconee/vicoport:latest")
-                    docker.withRegistry('https://registry.hub.docker.com', 'dockercred') {
-                        docker.image("viconee/vicoport:latest").push()
-                    }
-                }
-            }
-        }
 
         stage('Extract and Transfer Code to GitHub') {
             steps {
