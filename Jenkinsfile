@@ -6,6 +6,8 @@ pipeline {
         stage('Extract and Transfer Code to GitHub') {
             steps {
                 script {
+                    // Supprimer le répertoire s'il existe déjà
+                    sh 'rm -rf extracted-code'
                     // Create a temporary directory
                     sh 'mkdir extracted-code'
 
